@@ -76,23 +76,11 @@ async function getWeather(city) {
         day5Img.setAttribute('src', findImg(day5))
         //display city name
         title.textContent = data.city.name + ', ' + data.city.country + ' Weather'
-
-        console.log(data.city.name)
-        console.log(moment.utc(day1.dt_txt + '+08:00').format('dddd, MMMM Do YYYY, ha'));
-        console.log(moment.utc(day2.dt_txt + '+08:00').format('dddd, MMMM Do YYYY, ha'));
-        console.log(moment.utc(day3.dt_txt + '+08:00').format('dddd, MMMM Do YYYY, ha'));
-        console.log(moment.utc(day4.dt_txt + '+08:00').format('dddd, MMMM Do YYYY, ha'));
-        console.log(moment.utc(day5.dt_txt + '+08:00').format('dddd, MMMM Do YYYY, ha'));
-
     } catch (error) {
         console.error(error);
         alert('City not found.')
     }
 }
-
-//add city to recents
-
-//store recents in local storage
 
 function search() {
     const searchField = document.getElementById("searchField").value
