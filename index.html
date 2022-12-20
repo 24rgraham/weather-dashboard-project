@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Enter your description here" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/style.css">
+  <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#" id="title">Denver Weather</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <!-- <li class="nav-item active">
+              <a class="nav-link" href="#">Current Location <span class="sr-only">(current)</span></a>
+            </li> -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Favorites
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Seattle</a>
+                <a class="dropdown-item" href="#">Reno</a>
+                <a class="dropdown-item" href="#">Chicago</a>
+                <a class="dropdown-item" href="#">New York</a>
+                <a class="dropdown-item" href="#">San Diego</a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input id="searchField" class="form-control mr-sm-2" type="search" placeholder="Search for a city" aria-label="Search">
+            <button id="goButton" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+    <!-- Begin Quiz card -->
+        <div class="card text-white">
+            <img id='day1Img' src="http://www.photos-public-domain.com/wp-content/uploads/2012/04/fluffy-white-clouds.jpg" class="card-img" alt="...">
+            <div class="card-img-overlay">
+              <h2 class="card-title" style="text-shadow: 2px 2px 3px #070708">Today</h2>
+              <h3 class="card-text" id="day1Card" style="text-shadow: 2px 2px 3px #060707">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h3>
+            </div>
+          </div>
+        <div class="row">
+            <div class="card-group">
+                <div class="card">
+                  <img id='day2Img' src="https://jooinn.com/images/raining-12.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Tomorrow</h5>
+                    <p class="card-text" id="day2Card">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <img id='day3Img'src="http://www.photos-public-domain.com/wp-content/uploads/2012/04/fluffy-white-clouds.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title" id="day3Title"></h5>
+                    <p class="card-text" id="day3Card">This card has supporting text below as a natural lead-in to additional content.</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <img id='day4Img' src="https://wallpapercave.com/wp/wp3736920.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title" id="day4Title">Sunny</h5>
+                    <p class="card-text" id="day4Card">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                  </div>
+                </div>
+                <div class="card">
+                    <img id='day5Img' src="https://www.severe-weather.eu/wp-content/gallery/weather-photos/04072017_Adria_Lightning_8b.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title" id="day5Title">Lightning</h5>
+                      <p class="card-text" id="day5Card">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    </div>
+                  </div>
+                  <!-- <div class="card">
+                    <img src="https://filipinotimes.net/wp-content/uploads/2017/05/IMG_4867.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Partly Cloudy</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </div> -->
+                  </div>
+              </div>
+          </div>
+
+
+
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="./assets/script.js"></script>
+
+</html>
