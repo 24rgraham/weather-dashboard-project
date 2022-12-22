@@ -19,7 +19,7 @@ function findImg(day) {
     switch (day.weather[0].main) {
         case 'Clouds':
             if (day.weather[0].description == 'overcast clouds') {
-                return 'http://www.photos-public-domain.com/wp-content/uploads/2012/04/fluffy-white-clouds.jpg'
+                return 'https://www.photos-public-domain.com/wp-content/uploads/2012/04/fluffy-white-clouds.jpg'
             } else { return 'https://filipinotimes.net/wp-content/uploads/2017/05/IMG_4867.jpg' }
         case 'Rain':
             return 'https://jooinn.com/images/raining-12.jpg'
