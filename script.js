@@ -12,6 +12,7 @@ const day5Img = document.getElementById('day5Img')
 const goButton = document.getElementById("goButton")
 const title = document.getElementById("title")
 const dropdown = document.querySelectorAll('.dropdown-item')
+let cities = []
 
 
 function findImg(day) {
@@ -76,6 +77,36 @@ async function getWeather(city) {
         day5Img.setAttribute('src', findImg(day5))
         //display city name
         title.textContent = data.city.name + ', ' + data.city.country + ' Weather'
+        //save city in local storage
+        storedCities = JSON.parse(localStorage.getItem('cities'));
+        if (storedCities !== null) {
+            cities = storedCities;
+        }
+        if(!cities.includes(city)){
+            cities.push(city)
+        }
+        console.log(cities);
+        var child = dropdownGuy.lastElementChild; 
+        while (child) {
+            dropdownGuy.removeChild(child);
+            child = dropdownGuy.lastElementChild;
+        }
+        for (var i = 0; i < cities.length; i++) {
+            var thing = cities[i]
+            var a = document.createElement("a");
+            a.textContent = thing;
+            a.setAttribute("class", "dropdown-item");
+            dropdownGuy.appendChild(a);
+          }
+        localStorage.setItem("cities", JSON.stringify(cities))
+        // }
+        // reset event listeners
+        document.querySelectorAll('.dropdown-item').forEach(function (dropdown) {
+            dropdown.addEventListener('click', function () {
+                console.log(`The ${dropdown.textContent} button was clicked!`);
+                getWeather(dropdown.textContent)
+            });
+        });
     } catch (error) {
         console.error(error);
         alert('City not found.')
@@ -90,13 +121,6 @@ function search() {
 function handleDropdown() {
     console.log('clicky');
 }
-
-dropdown.forEach(function (dropdown) {
-    dropdown.addEventListener('click', function () {
-        console.log(`The ${dropdown.textContent} button was clicked!`);
-        getWeather(dropdown.textContent)
-    });
-});
 
 goButton.addEventListener('click', search)
 

@@ -13,7 +13,7 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#" id="title">Denver Weather</a>
+        <a class="navbar-brand" id="title">Denver Weather</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -24,15 +24,15 @@
               <a class="nav-link" href="#">Current Location <span class="sr-only">(current)</span></a>
             </li> -->
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Favorites
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Seattle</a>
-                <a class="dropdown-item" href="#">Reno</a>
-                <a class="dropdown-item" href="#">Chicago</a>
-                <a class="dropdown-item" href="#">New York</a>
-                <a class="dropdown-item" href="#">San Diego</a>
+              <div class="dropdown-menu" id="dropdownGuy" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item">Seattle</a>
+                <a class="dropdown-item">Reno</a>
+                <a class="dropdown-item">Chicago</a>
+                <a class="dropdown-item">New York</a>
+                <a class="dropdown-item">San Diego</a>
               </div>
             </li>
           </ul>
@@ -44,7 +44,7 @@
       </nav>
 
     <!-- weather cards -->
-        <div class="card text-white" style="height: 540px;">
+        <div class="card text-white" style="height: 450px;">
             <img id='day1Img' src="http://www.photos-public-domain.com/wp-content/uploads/2012/04/fluffy-white-clouds.jpg" class="card-img" alt="...">
             <div class="card-img-overlay">
               <h2 class="card-title" style="text-shadow: 2px 2px 3px #070708">Today</h2>
@@ -52,7 +52,7 @@
             </div>
           </div>
         <div class="row">
-            <div class="card-group">
+            <div class="card-group" style="position: fixed;">
                 <div class="card">
                   <img id='day2Img' src="https://jooinn.com/images/raining-12.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
