@@ -123,6 +123,6 @@ function handleDropdown() {
     console.log('clicky');
 }
 
-goButton.addEventListener('click', search())
+goButton.addEventListener('click', search)
 
 getWeather('seattle')
