@@ -11,9 +11,6 @@ const day4Img = document.getElementById('day4Img')
 const day5Img = document.getElementById('day5Img')
 const goButton = document.getElementById("goButton")
 const title = document.getElementById("title")
-const dropdown = document.querySelectorAll('.dropdown-item')
-let cities = []
-
 
 function findImg(day) {
     switch (day.weather[0].main) {
@@ -50,10 +47,11 @@ function titleCase(str) {
 
 //fetch data
 async function getWeather(city) {
+    console.log(city);
     try {
         const openWeatherUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=74161c6e5f2f61ea2996c44ba6799559&units=imperial'
         const response = await fetch(openWeatherUrl);
-        const data = await response.json();
+        const data = response.json();
         const day1 = data.list[0]
         const day2 = data.list[8]
         const day3 = data.list[16]
@@ -77,36 +75,6 @@ async function getWeather(city) {
         day5Img.setAttribute('src', findImg(day5))
         //display city name
         title.textContent = data.city.name + ', ' + data.city.country + ' Weather'
-        //save city in local storage
-        storedCities = JSON.parse(localStorage.getItem('cities'));
-        if (storedCities !== null) {
-            cities = storedCities;
-        }
-        if(!cities.includes(city)){
-            cities.push(city)
-        }
-        console.log(cities);
-        var child = dropdownGuy.lastElementChild; 
-        while (child) {
-            dropdownGuy.removeChild(child);
-            child = dropdownGuy.lastElementChild;
-        }
-        for (var i = 0; i < cities.length; i++) {
-            var thing = cities[i]
-            var a = document.createElement("a");
-            a.textContent = thing;
-            a.setAttribute("class", "dropdown-item");
-            dropdownGuy.appendChild(a);
-          }
-        localStorage.setItem("cities", JSON.stringify(cities))
-        // }
-        // reset event listeners
-        document.querySelectorAll('.dropdown-item').forEach(function (dropdown) {
-            dropdown.addEventListener('click', function () {
-                console.log(`The ${dropdown.textContent} button was clicked!`);
-                getWeather(dropdown.textContent)
-            });
-        });
     } catch (error) {
         console.error(error);
         alert('City not found.')
@@ -116,10 +84,6 @@ async function getWeather(city) {
 function search() {
     const searchField = document.getElementById("searchField").value
     getWeather(searchField);
-}
-
-function handleDropdown() {
-    console.log('clicky');
 }
 
 goButton.addEventListener('click', search)
