@@ -52,7 +52,9 @@ function titleCase(str) {
 async function getWeather(city) {
     try {
         const openWeatherUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=74161c6e5f2f61ea2996c44ba6799559&units=imperial'
-        const response = await fetch(openWeatherUrl);
+        const response = await fetch(openWeatherUrl, {
+            cache: "reload",
+            });
         const data = await response.json();
         const day1 = data.list[0]
         const day2 = data.list[8]
@@ -113,16 +115,17 @@ async function getWeather(city) {
     }
 }
 
-function search() {
-    const city = document.getElementById("searchField").value
-    console.log(city);
-    getWeather(city);
-}
+
 
 function handleDropdown() {
     console.log('clicky');
 }
 
-goButton.addEventListener('click', search)
+goButton.addEventListener('click', function search(event) {
+    event.preventDefault();
+    const city = document.getElementById("searchField").value
+    console.log(city);
+    getWeather(city);
+})
 
 getWeather('seattle')
